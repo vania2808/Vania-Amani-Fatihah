@@ -21,7 +21,7 @@ sns.set(style="whitegrid")
 # Membaca dataset
 @st.cache_data
 def load_data():
-    url = "https://raw.githubusercontent.com/USERNAME/REPO_NAME/main/Student_performance_data _.csv"
+    url = "Student_performance_data _.csv"
     return pd.read_csv(url)
 
 data = load_data()
