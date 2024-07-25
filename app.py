@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import seaborn as sns
 from sklearn.model_selection import train_test_split, cross_val_score, KFold
 from sklearn.preprocessing import StandardScaler, OneHotEncoder, LabelEncoder
 from sklearn.compose import ColumnTransformer
@@ -35,7 +36,7 @@ y = label_encoder.fit_transform(y)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 numeric_features = X.select_dtypes(include=['int64', 'float64']).columns
-categorical_features = X.select_dtypes(include(['object'])).columns
+categorical_features = X.select_dtypes(include=['object']).columns
 
 numeric_transformer = Pipeline(steps=[
     ('imputer', SimpleImputer(strategy='mean')),
@@ -125,4 +126,4 @@ for name, model in models.items():
 
 st.write("Cross-Validation Scores:")
 for name, scores in cv_scores.items():
-    st.write(f"{name}: Mean CV
+    st.write(f"{name}: Mean CV Score = {-scores.mean()}")
