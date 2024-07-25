@@ -14,10 +14,11 @@ from sklearn.model_selection import GridSearchCV, cross_val_score, KFold
 import numpy as np
 import streamlit as st
 
-# Mengunduh dan membaca dataset
+# Membaca dataset
 @st.cache_data
 def load_data():
-    return pd.read_csv('Student_performance_data_.csv')
+    url = "Student_performance_data _.csv"
+    return pd.read_csv(url)
 
 data = load_data()
 
