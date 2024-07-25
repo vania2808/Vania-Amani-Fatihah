@@ -12,14 +12,13 @@ from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score, accuracy_score
 from sklearn.model_selection import GridSearchCV
 
-
 # Set style for plots
 sns.set(style="whitegrid")
 
 # Load and display the dataset
 @st.cache
 def load_data():
-    data = pd.read_csv('restaurant_menu_optimization_data.csv')
+    data = pd.read_csv(r'C:\UAS_MPML\restaurant_menu_optimization_data.csv')
     return data
 
 data = load_data()
@@ -36,7 +35,7 @@ y = label_encoder.fit_transform(y)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 numeric_features = X.select_dtypes(include=['int64', 'float64']).columns
-categorical_features = X.select_dtypes(include=['object']).columns
+categorical_features = X.select_dtypes(include(['object'])).columns
 
 numeric_transformer = Pipeline(steps=[
     ('imputer', SimpleImputer(strategy='mean')),
@@ -126,4 +125,4 @@ for name, model in models.items():
 
 st.write("Cross-Validation Scores:")
 for name, scores in cv_scores.items():
-    st.write(f"{name}: Mean CV Score = {-scores.mean()}")
+    st.write(f"{name}: Mean CV
