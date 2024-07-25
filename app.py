@@ -3,7 +3,7 @@
 import pandas as pd
 
 # Mengunduh dan membaca dataset baru
-data = pd.read_csv(r'C:\MPMLUAS\Student_performance_data _.csv')
+data = pd.read_csv('Student_performance_data _.csv')
 
 # Menampilkan beberapa baris pertama dari dataset
 print(data.head())
