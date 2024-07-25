@@ -20,7 +20,7 @@ sns.set(style="whitegrid")
 # Load and display the dataset
 @st.cache
 def load_data():
-    data = pd.read_csv(r'C:\UAS_MPML\restaurant_menu_optimization_data.csv')
+    data = pd.read_csv('restaurant_menu_optimization_data.csv')
     return data
 
 data = load_data()
