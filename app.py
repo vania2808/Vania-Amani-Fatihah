@@ -17,7 +17,7 @@ import streamlit as st
 # Mengunduh dan membaca dataset
 @st.cache_data
 def load_data():
-    return pd.read_csv(r'C:\MPMLUAS\Student_performance_data_.csv')
+    return pd.read_csv('Student_performance_data_.csv')
 
 data = load_data()
 
